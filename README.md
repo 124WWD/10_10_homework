@@ -68,3 +68,70 @@ python3 starter.py
 程序会分别显示四个函数的检查结果：`通过`、`未通过`、`未完成`或`运行出错`。根据提示修改代码，保存文件后再次运行。四个函数全部通过时，会显示图像对比窗口。
 
 关闭图像窗口即可结束程序；也可以在终端按 `Ctrl + C` 停止运行。
+
+## 5. 将完成的作业上传到自己的 GitHub
+
+确认程序显示 `4/4 个函数通过` 后，按照以下步骤提交。
+
+### 创建自己的仓库
+
+1. 登录自己的 GitHub 账号，打开 [新建仓库页面](https://github.com/new)。
+2. 在 Owner 中选择自己的账号。
+3. Repository name 必须填写 **`10_10_homework`**，拼写完全一致。
+4. 选择 Public（公开），方便老师查看作业。
+5. 不要添加 README、.gitignore 或 License，保持新仓库为空。
+6. 点击 Create repository 创建仓库。
+
+### 提交代码并推送
+
+回到终端，进入本地作业目录，并确认其中有你已完成的 `starter.py`：
+
+```bash
+cd ~/Downloads/10_10_homework
+pwd
+ls
+```
+
+如果下载位置不同，请修改上述路径。
+
+将下载时设置的远程地址改为**自己的仓库地址**。下面的 `myname` 是占位符，必须替换为你的 GitHub 用户名：
+
+```bash
+git remote set-url origin https://github.com/myname/10_10_homework.git
+git remote -v
+```
+
+确认显示的地址属于你自己的账号，然后依次运行：
+
+```bash
+git add starter.py
+git commit -m "完成图像矩阵作业"
+git push -u origin HEAD:main
+```
+
+这些命令会记录你对 `starter.py` 的修改，并将当前分支的代码上传到自己仓库的 `main` 分支。请按终端提示完成 GitHub 身份验证；HTTPS 身份验证不能使用普通的 GitHub 登录密码。
+
+如果 `git commit` 提示未设置姓名或邮箱，请先运行以下命令，将内容替换为你自己的姓名和 GitHub 账号邮箱，然后重新执行提交与推送：
+
+```bash
+git config user.name "你的姓名"
+git config user.email "你的邮箱"
+```
+
+如果提示 `nothing to commit`，表示没有新的修改需要记录。确认你已保存完成的代码后，可以继续执行推送命令。
+
+上传后，打开自己的 GitHub 仓库，确认 `main` 分支中的 `starter.py` 已包含你的实现。
+
+相关操作可参考 [GitHub 官方上传指南](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github) 和 [修改远程仓库地址说明](https://docs.github.com/en/get-started/git-basics/managing-remote-repositories)。
+
+## 6. 在芯位蜜线网站提交仓库链接
+
+1. 登录 **芯位蜜线网站**。
+2. 找到 **“10_10 Matrix”作业**。
+3. 将你刚刚上传的个人仓库的完整链接粘贴到对应的作业内容中，并完成提交。例如：
+
+```text
+https://github.com/myname/10_10_homework.git
+```
+
+请将 `myname` 替换为自己的 GitHub 用户名。提交的是你自己的仓库链接，不是老师提供的 `inspirepassion` 仓库链接。
